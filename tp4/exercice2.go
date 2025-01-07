@@ -10,26 +10,25 @@ func f(x float64) float64 {
 
 func main() {
 
-	var a, b int32
+	var a, b int32 = 1, 4
+	var n int
 
-	fmt.Println("Donnez un nombre a : ")
-	fmt.Scan(&a)
+	fmt.Println("Donnez un nombre de rectangles : ")
+	fmt.Scan(&n)
 
-	fmt.Println("Donnez un nombre b : ")
-	fmt.Scan(&b)
+	var h float64 = (float64(b) - float64(a)) / float64(n)
 
-	var som float32
+	var R float64
 
-	for x := 1; x < 4; x++ {
+	for i := 0; i < n; i++ {
 
-		som += f(x)
+		var xi float64 = float64(a) + float64(i)*float64(h)
+		R += f(xi)
 
 	}
 
-	var h = (b - a) / 4
+	R *= h
 
-	som += h
-
-	fmt.Println(som)
+	fmt.Println(R)
 
 }
